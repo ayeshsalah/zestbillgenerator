@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<style>
+th{
+    font-weight: normal;
+}
+td{
+  font-weight: bold;
+}
+</style>
+<head>
+  <title>ZEST Electricity Bill</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+  <div class="container">
+    <img class="d-block mx-auto mb-4" src={{url_for('static', filename='zest-logo.jpeg')}} height='80' width="120"
+      align="right">
+    <!-- <img class="d-block mx-auto mb-4" src={{url_for('static', filename='zest-logo.jpeg')}} height='80' width="120" align="right"> -->
+    <div class="py-5 text-left">
+      <h2>ZEST Electricity Bill</h2>
+    </div>
+    <form action="" method="post">
+      <div class="col-md-6 ">
+      <div class="form-group">
+        <label> Name : <b>{{name}}</b> </label>&emsp;
+        <label> Address : <b>{{address}}</b> </label>
+        <br>
+        <label>Billing Start Date : <b>{{startdate}}</b> </label>&emsp;
+        <label>Billing End Date : <b>{{enddate}}</b> </label>
+        <br>
+        <label>Previous Reading : <b>{{previousConsumption}}</b> </label>
+        <label>Current Reading : <b>{{currentConsumption}}</b> </label>
+        <label>Units Consumed : <b>{{units}}</b> </label>
+        <br>
+
+        <label>Contracted Load : <b>{{contracted_load}} kW </b> </label>&emsp;
+        <label>Billing Type : <b>{{billing_type}}</b> </label>
+      </div>
+
+      <table class="table table-striped table-bordered table-sm">
+        <colgroup>
+          <col class="col-md-4">
+          <col class="col-md-2">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col"><b>Items</b></th>
+            <th scope="col"><b>Charges ( in ₹ )</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Contracted Capacity A Charges</th>
+            <td>{{cca}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Contracted Capacity B Charges</th>
+            <td>{{ccb}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Slab 1 ({{slab1_units}} units at ₹ {{slab1rate}} )</th>
+            <td>{{slab1}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Slab 2 ({{slab2_units}} units at ₹ {{slab2rate}} )</th>
+            <td>{{slab2}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Slab 3 ({{slab3_units}} units at ₹ {{slab3rate}} )</th>
+            <td>{{slab3}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Slab 4 ({{slab4_units}} units at ₹ {{slab4rate}} )</th>
+            <td>{{slab4}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Fuel Cess</th>
+            <td>{{fuelcess}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Tax</th>
+            <td>{{tax}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Total</th>
+            <td>{{total}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Less (Tax + Fuel Cess)</th>
+            <td>{{discount}}</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Net Bill</th>
+            <td>{{netbill}}</td>
+
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+    </form>
+
+  </div>
+</body>
+
+</html>

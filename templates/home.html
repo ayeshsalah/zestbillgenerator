@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ZEST Electricity Bill Calculator </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+  <div class="container">
+    <img class="d-block mx-auto mb-4" src={{url_for('static', filename='zest-logo.jpeg')}} height='80' width="120"
+      align="right">
+    <div class="py-5 text-center">
+      <h2>ZEST Electricity Bill Calculator</h2>
+    </div>
+    <form action="" method="post">
+      <!-- EMAIL SUBMISSION -->
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <b>
+              <label for="consumption">Personal Details</label>
+            </b>
+            <div class="row">
+              <div class="col-md-6 ">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="" value="">
+              </div>
+              <div class="col-md-6 ">
+                <label for="address">Address</label>
+                <input type="text" name="address" class="form-control" id="address" placeholder="" value="">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <b>
+              <label for="contractedLoadInput">Contracted Load</label>
+            </b>
+            <div class="row">
+              <div class="col-md-6 ">
+                <label for="loadKW">kW</label>
+                <input type="text" name="loadKW" class="form-control" id="loadKW" placeholder="Contracted Load" value=""
+                  aria-describedby="kWHelp" required>
+                <small id="kWHelp" class="form-text text-muted">in kW</small>
+
+                <!-- <div class="invalid-feedback">
+            Valid first name is required.
+          </div> -->
+              </div>
+              <div class="col-md-6 ">
+                <label for="loadHP">HP</label>
+                <input type="text" name="loadHP" class="form-control" id="loadHP" placeholder="Contracted Load" value=""
+                  aria-describedby="hPHelp" required>
+                <small id="hPHelp" class="form-text text-muted">in HP</small>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <b>
+              <label for="consumption">Bill Details</label>
+            </b>
+            <div class="row">
+              <div class="col-md-6 ">
+                <label for="previousConsumption">Previous Reading</label>
+                <input type="text" name="previousConsumption" class="form-control" id="previousConsumption"
+                  placeholder="Previous Consumption" value="" aria-describedby="previousConsumptionHelp" required>
+                <small id="previousConsumptionHelp" class="form-text text-muted">in units</small>
+              </div>
+              <div class="col-md-6 ">
+                <label for="currentConsumption">Current Reading</label>
+                <input type="text" name="currentConsumption" class="form-control" id="currentConsumption"
+                  placeholder="Current Consumption" value="" aria-describedby="currentConsumptionHelp" required>
+                <small id="currentConsumptionHelp" class="form-text text-muted">in units</small>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <b>
+              <label for="consumption"></label>
+            </b>
+            <div class="row">
+              <div class="col-md-6 ">
+                <label>Billing start date </label>
+                <input type="date" id="startdate" name="startdate" max="3000-12-31" min="1000-01-01"
+                  class="form-control" required>
+              </div>
+              <div class="col-md-6 ">
+                <label>Billing end date </label>
+                <input type="date" id="enddate" name="enddate" max="3000-12-31" min="1000-01-01" class="form-control"
+                  required>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- RADIO BUTTONS -->
+      <div class="form-group">
+        <div class="row">
+
+          <div class="col-md-6 ">
+            <fieldset class="form-group ">
+              <b>
+                <label for="form-check-label">Billing Type</label>
+              </b>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="billingOptionsRadios" id="billingOptionsRadios1"
+                    value="Rural"> Rural
+                </label>
+              </div>
+              <div class="form-check ">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="billingOptionsRadios" id="billingOptionsRadios2"
+                    value="Urban" checked> Urban
+                </label>
+              </div>
+              <div class="form-check ">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="billingOptionsRadios" id="billingOptionsRadios3"
+                    value="Commercial"> Commercial
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+  </div>
+
+  </div>
+</body>
+
+</html>
